@@ -20,14 +20,8 @@ Windows:
 4) run test on windows terminal
     <python dir>\python.exe test_suite.py
 
+NOTE: above chromedriver is only compatible with chrome version 77
 
-Mac:
-1) install python
-2) install selenium 
-	pip install selenium
-3) install chromedriver_mac64.zip https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/
-4) mv chromedriver /usr/local/bin
-5) run test on mac terminal
-	python test_suite.py
+
 
 
