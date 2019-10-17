@@ -1,0 +1,22 @@
+This includes test_suite.py which tests:
+1) connection to the website
+2) test the search feature of the site by validating result of a search for all possible two letter permutation
+
+This test illustrate the framework called TestFw.
+TestFw includes two class:
+1) web_driver_fw.py - this class inherent selenium, provides connection and interaction to the websites
+2) helper_function.py - this class includes methods that are not test case specific and can be reused by
+                        other test cases
+
+
+steps to run test:
+
+Windows:
+1) install python3  https://www.python.org/downloads/windows/
+2) install selenium
+    pip install selenium
+3) install chromedriver_win32.zip
+    unpack and copy chromedriver.exe into c:\Windows
+4) open cmd terminal
+5) git clone joeratio
+6) 
