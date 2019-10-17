@@ -28,7 +28,7 @@ web_test.click_button_by_class_name("close")
 
 # auto generate a-z list permutation by using helper function
 helper_func = HelperFunction()
-search_list = helper_func.auto_generate_two_letter_list('z')
+search_list = helper_func.auto_generate_two_letter_list('a')
 
 # TEST 2: Execute a search based on search_list criteria by searching in upper case
 result_dict_search_upper_case = {}
