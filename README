@@ -17,6 +17,9 @@ Windows:
     pip install selenium
 3) install chromedriver_win32.zip
     unpack and copy chromedriver.exe into c:\Windows
-4) open cmd terminal
-5) git clone joeratio
-6) 
+4) run test on windows terminal
+    <python dir>\python.exe test_suite.py
+
+
+Mac:
+
