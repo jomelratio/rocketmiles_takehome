@@ -1,10 +1,14 @@
+"""
+This module contains all the methods in selenium
+"""
+
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
-from time import *
 
 
 class WebDriverFw(webdriver.Firefox, webdriver.Chrome, webdriver.Ie, webdriver.Safari, Keys):
@@ -56,14 +60,19 @@ class WebDriverFw(webdriver.Firefox, webdriver.Chrome, webdriver.Ie, webdriver.S
 
         try:
             assert pattern in web_title, str(pattern) + " In Web title not found"
-        except Exception as other_err:
-            print "FAIL " + str(other_err)
+        except AssertionError as other_err:
+            print("FAIL " + str(other_err))
         else:
-            print ("PASS patter found: " + str(pattern))
+            print("PASS patter found: " + str(pattern))
 
-        print "\tTitle: " + str(self.title)
+        print("\tTitle: " + str(self.title))
 
     def click_button_by_class_name(self, button_name):
+        """
+        This closes popup window
+        :param button_name:
+        :return:
+        """
         sleep(5)
         widget = self.find_element_by_class_name(button_name)
         widget.click()
@@ -79,8 +88,8 @@ class WebDriverFw(webdriver.Firefox, webdriver.Chrome, webdriver.Ie, webdriver.S
         widget = self.find_element_by_name(element_name)
         widget.send_keys(pattern)
         sleep(3)
-        a = self.find_element_by_xpath("//ul[@class='dropdown-menu']")
-        option = a.find_elements_by_xpath("//li[@role='option']")
+        element = self.find_element_by_xpath("//ul[@class='dropdown-menu']")
+        option = element.find_elements_by_xpath("//li[@role='option']")
         widget.send_keys(Keys.CONTROL + 'a')
         widget.send_keys(Keys.DELETE)
         return len(option)
@@ -103,16 +112,9 @@ class WebDriverFw(webdriver.Firefox, webdriver.Chrome, webdriver.Ie, webdriver.S
         """
         url = self.current_url
         try:
-            site = WebDriverWait(self, wait).until(expected_conditions.presence_of_element_located((By.CLASS_NAME, class_name)))
-            print 'PASS ' + url + ' open'
+            WebDriverWait(self, wait).until(ec.presence_of_element_located(
+                (By.CLASS_NAME, class_name)))
+            print('PASS ' + url + ' open')
         except TimeoutException:
-            print 'FAIL ' + url + ' took too long'
+            print('FAIL ' + url + ' took too long')
             exit()
-
-
-
-
-
-
-
-

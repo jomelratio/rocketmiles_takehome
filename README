@@ -12,7 +12,7 @@ TestFw includes two class:
 steps to run test:
 
 Windows:
-1) install python3  https://www.python.org/downloads/windows/
+1) install python2.7 https://www.python.org/downloads/windows/
 2) install selenium
     pip install selenium
 3) install chromedriver_win32.zip https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/
@@ -20,8 +20,10 @@ Windows:
 4) run test on windows terminal
     <python dir>\python.exe test_suite.py
 
-NOTE: above chromedriver is only compatible with chrome version 77
-
+NOTE:
+Above chromedriver is only compatible with chrome version 77
+For this DEMO, I only added code to support windows and chrome ver 77 browser.
+Code can easily extended to test all browser.
 
 
 

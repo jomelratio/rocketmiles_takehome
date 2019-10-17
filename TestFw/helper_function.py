@@ -1,6 +1,12 @@
+"""
+Provide common helper function
+"""
 
 
 class HelperFunction:
+    """
+    Helper function for common methods used in all test cases
+    """
     def __init__(self):
         pass
 
@@ -12,9 +18,11 @@ class HelperFunction:
         """
         character_list = []
         first_char = start_char
-        for letter in range(0, 26):
+        counter = 1
+        while counter <= 26:
             character_list.append(first_char)
             first_char = chr(ord(first_char) + 1)
+            counter += 1
         return character_list
 
     def auto_generate_two_letter_list(self, start_char):
@@ -38,7 +46,3 @@ class HelperFunction:
             if item_in_a == 'z':
                 break
         return two_letter_list
-
-
-
-
